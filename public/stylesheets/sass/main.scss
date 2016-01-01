@@ -26,8 +26,8 @@ $green: #4CAF50;
 
 
 
-// Typefaces
-$logo: 'Montserrat', sans-serif;
+// Typefaces NunitoMontserrat
+$logo: 'Nunito', sans-serif;
 $text: 'Lato', sans-serif;
 
 
@@ -39,7 +39,13 @@ $text: 'Lato', sans-serif;
   padding: 20px;
   margin: 0;
   font-family: $text;
+  background-color: $blue;
  }
+
+a {
+  text-decoration: none;
+  color: $black;
+}
 
 h1 {
   font-family: $logo;
@@ -77,6 +83,7 @@ section {
     div.vitals-container {
       @include outer-container;
       margin-top: 30px;
+      margin-bottom: 20px;
 
       div {
         text-align: center;
@@ -199,8 +206,12 @@ section {
 
     }
 
-    div {
+    div.drawer {
       height: auto;
+    }
+
+    div.drawer-section {
+      padding: 0 0 0 15px;
     }
   }
 
@@ -218,5 +229,60 @@ section {
     span.weight-unit {
       font-size: 0.4em;
     }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Help page
+
+section#help {
+
+  h4 {
+    text-align: center;
+  }
+}
+
+form {
+  input {
+    width: 70%;
+    margin: 15px 15%;
+    font-family: $logo;
+
+    &[type="submit"] {
+      color: $white;
+      font-size: 1.2em;
+      background-color: $green;
+      height: 40px;
+      border-radius: 3px;
+      border: $green solid 3px;
+
+    }
+
+    &[type="tel"] {
+
+      height: 80px;
+      font-size: 2.2em;
+      text-align: center;
+      border: $light-gray solid 3px;
+      border-radius: 3px;
+
+      &:focus {
+        outline: none;
+        border-color: $green;
+      }
+
+    } 
   }
 }

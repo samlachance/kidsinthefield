@@ -1,5 +1,10 @@
-<h4>Enter patient weight in lbs</h4>
-<form action="/help" method="post">
-  <input type="tel" name="weight">
-  <input type="submit">
-</form>
+
+
+<section id="help">
+  <h4>Enter patient weight in lbs</h4>
+  <form action="/help" method="post">
+    <input type="tel" name="weight" placeholder="e.g. 42">
+    <input type="submit" value="Convert to kgs">
+  </form>
+</section>
+<%= erb :_call %>

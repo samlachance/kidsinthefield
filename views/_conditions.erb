@@ -1,32 +1,43 @@
 <script>
   $(function() {
-    $("#conditions").accordion({ header: "div.condition-title", collapsible: true, active: false });
+    $("#conditions").accordion({ header: "div.condition-title", collapsible: true, active: false, heightStyle: "content" });
   });
 </script>
 
 <section id="conditions">
   <h3>Conditions</h3>
+
+
+
+
+
   <div class="condition-title">
     <h4>CPR</h4>
     <i class="fa fa-bars"></i>
   </div>
   
-  <div>
+  <div class="drawer">
     
   </div>
+
+
+
+
+
+
   <div class="condition-title">
     <h4>Seizure</h4>
     <i class="fa fa-bars"></i>
   </div>
-  <div>
-    <div class="drugs">
+  <div class="drawer">
+    <div class="drawer-section drugs">
       <h5>Drugs</h5>
       <ul>
         <li>Ativan: <%= ativan(@weight_in_kgs) %> mg</li>
         <li>Tylenol: <%= tylenol(@weight_in_kgs) %> mg</li>
       </ul>
     </div>
-    <div class="watch-for">
+    <div class="drawer-section watch-for">
       <h5>Watch for</h5>
       <ul>
         <li>Fever</li>
@@ -35,7 +46,7 @@
         <li>Hypoglycemia</li>
       </ul>
     </div>
-    <div class="ask-parents">
+    <div class="drawer-section ask-parents">
       <h5>Ask parents</h5>
       <ul>
         <li>History of seizures?</li>
@@ -44,7 +55,7 @@
         <li>What did the seizure look like?</li>
       </ul>
     </div>
-    <div class="be-sure-to">
+    <div class="drawer-section be-sure-to">
       <h5>Be sure to</h5>
       <ul>
         <li>Check blood sugar</li>
@@ -54,19 +65,156 @@
       </ul>
     </div>
   </div>
+
+
+
+
+
+
+
+  <div class="condition-title">
+    <h4>Head Injury</h4>
+    <i class="fa fa-bars"></i>
+  </div>
+  <div class="drawer">
+    <div class="drawer-section drugs">
+      <h5>Drugs</h5>
+      <ul>
+        <li>Zofran: <%= zofran(@weight_in_kgs)[:dose] %> mg</li>
+      </ul>
+    </div>
+    <div class="drawer-section watch-for">
+      <h5>Watch for</h5>
+      <ul>
+        <li>Seizures</li>
+        <li>Mental status changes</li>
+        <li>Vomiting</li>
+      </ul>
+    </div>
+    <div class="drawer-section ask-parents">
+      <h5>Ask parents</h5>
+      <ul>
+        <li>Did the child lose consciousness?</li>
+        <li>Have the vomited?</li>
+        <li>Any altered mentation?</li>
+      </ul>
+    </div>
+    <div class="drawer-section be-sure-to">
+      <h5>Be sure to</h5>
+      <ul>
+        <li>Immobilize if indicated</li>
+        <li>IV if significant mechanism</li>
+        <li>Treat minor trauma</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+  <div class="condition-title">
+    <h4>Extremity trauma</h4>
+    <i class="fa fa-bars"></i>
+  </div>
+  <div class="drawer">
+    <div class="drawer-section drugs">
+      <h5>Drugs</h5>
+      <ul>
+        <li>Morphine: <%= morphine(@weight_in_kgs) %> mg</li>
+      </ul>
+    </div>
+    <div class="drawer-section watch-for">
+      <h5>Watch for</h5>
+      <ul>
+        <li>Significant bleeding</li>
+        <li>Loss of pulses</li>
+        <li>Open fractures</li>
+      </ul>
+    </div>
+    <div class="drawer-section ask-parents">
+      <h5>Ask parents</h5>
+      <ul>
+        <li>Mechanism of injury</li>
+        <li>Did the child lose consciousness?</li>
+      </ul>
+    </div>
+    <div class="drawer-section be-sure-to">
+      <h5>Be sure to</h5>
+      <ul>
+        <li>Splint in a position of comfort</li>
+        <li>Keep NPO</li>
+        <li>Start IV if indicated</li>
+        <li>Control pain</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="condition-title">
+    <h4>Septic Neonate</h4>
+    <i class="fa fa-bars"></i>
+  </div>
+  <div class="drawer">
+    <div class="drawer-section info">
+      <h5>General info</h5>
+      <p>A spetic neonate is a child less than 28 days who is febrile  or hypothermic.</p>
+    </div>
+    <div class="drawer-section watch-for">
+      <h5>Watch for</h5>
+      <ul>
+        <li>Hypothermia</li>
+        <li>Decreased responsiveness</li>
+        <li>Hypoglycemia</li>
+      </ul>
+    </div>
+    <div class="drawer-section ask-parents">
+      <h5>Ask parents</h5>
+      <ul>
+        <li>How long has the child been like this?</li>
+        <li>Was your child full term?</li>
+        <li>Did your child stay in the NICU?</li>
+        <li>Does the child have any past medical history?</li>
+        <li>Has the child been exposed to an ill people?</li>
+      </ul>
+    </div>
+    <div class="drawer-section be-sure-to">
+      <h5>Be sure to</h5>
+      <ul>
+        <li>Check blood sugar</li>
+        <li>Check rectal temperature</li>
+        <li>Contact Children's for medical consult</li>
+        <li>Warm if patient is hypothermic</li>
+        <li>Attach to cardiac monitor</li>
+        <li>Establish IV</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
   <div class="condition-title">
     <h4>Seizure</h4>
     <i class="fa fa-bars"></i>
   </div>
-  <div>
-    <div class="drugs">
+  <div class="drawer">
+    <div class="drawer-section drugs">
       <h5>Drugs</h5>
       <ul>
         <li>Ativan: <%= ativan(@weight_in_kgs) %> mg</li>
         <li>Tylenol: <%= tylenol(@weight_in_kgs) %> mg</li>
       </ul>
     </div>
-    <div class="watch-for">
+    <div class="drawer-section watch-for">
       <h5>Watch for</h5>
       <ul>
         <li>Fever</li>
@@ -75,7 +223,7 @@
         <li>Hypoglycemia</li>
       </ul>
     </div>
-    <div class="ask-parents">
+    <div class="drawer-section ask-parents">
       <h5>Ask parents</h5>
       <ul>
         <li>History of seizures?</li>
@@ -84,124 +232,7 @@
         <li>What did the seizure look like?</li>
       </ul>
     </div>
-    <div class="be-sure-to">
-      <h5>Be sure to</h5>
-      <ul>
-        <li>Check blood sugar</li>
-        <li>Check temperature</li>
-        <li>IV if afebrile</li>
-        <li>12 lead EKG</li>
-      </ul>
-    </div>
-  </div><div class="condition-title">
-    <h4>Seizure</h4>
-    <i class="fa fa-bars"></i>
-  </div>
-  <div>
-    <div class="drugs">
-      <h5>Drugs</h5>
-      <ul>
-        <li>Ativan: <%= ativan(@weight_in_kgs) %> mg</li>
-        <li>Tylenol: <%= tylenol(@weight_in_kgs) %> mg</li>
-      </ul>
-    </div>
-    <div class="watch-for">
-      <h5>Watch for</h5>
-      <ul>
-        <li>Fever</li>
-        <li>Mental status changes</li>
-        <li>Trauma</li>
-        <li>Hypoglycemia</li>
-      </ul>
-    </div>
-    <div class="ask-parents">
-      <h5>Ask parents</h5>
-      <ul>
-        <li>History of seizures?</li>
-        <li>Recent fever?</li>
-        <li>How long was the seizure?</li>
-        <li>What did the seizure look like?</li>
-      </ul>
-    </div>
-    <div class="be-sure-to">
-      <h5>Be sure to</h5>
-      <ul>
-        <li>Check blood sugar</li>
-        <li>Check temperature</li>
-        <li>IV if afebrile</li>
-        <li>12 lead EKG</li>
-      </ul>
-    </div>
-  </div><div class="condition-title">
-    <h4>Seizure</h4>
-    <i class="fa fa-bars"></i>
-  </div>
-  <div>
-    <div class="drugs">
-      <h5>Drugs</h5>
-      <ul>
-        <li>Ativan: <%= ativan(@weight_in_kgs) %> mg</li>
-        <li>Tylenol: <%= tylenol(@weight_in_kgs) %> mg</li>
-      </ul>
-    </div>
-    <div class="watch-for">
-      <h5>Watch for</h5>
-      <ul>
-        <li>Fever</li>
-        <li>Mental status changes</li>
-        <li>Trauma</li>
-        <li>Hypoglycemia</li>
-      </ul>
-    </div>
-    <div class="ask-parents">
-      <h5>Ask parents</h5>
-      <ul>
-        <li>History of seizures?</li>
-        <li>Recent fever?</li>
-        <li>How long was the seizure?</li>
-        <li>What did the seizure look like?</li>
-      </ul>
-    </div>
-    <div class="be-sure-to">
-      <h5>Be sure to</h5>
-      <ul>
-        <li>Check blood sugar</li>
-        <li>Check temperature</li>
-        <li>IV if afebrile</li>
-        <li>12 lead EKG</li>
-      </ul>
-    </div>
-  </div><div class="condition-title">
-    <h4>Seizure</h4>
-    <i class="fa fa-bars"></i>
-  </div>
-  <div>
-    <div class="drugs">
-      <h5>Drugs</h5>
-      <ul>
-        <li>Ativan: <%= ativan(@weight_in_kgs) %> mg</li>
-        <li>Tylenol: <%= tylenol(@weight_in_kgs) %> mg</li>
-      </ul>
-    </div>
-    <div class="watch-for">
-      <h5>Watch for</h5>
-      <ul>
-        <li>Fever</li>
-        <li>Mental status changes</li>
-        <li>Trauma</li>
-        <li>Hypoglycemia</li>
-      </ul>
-    </div>
-    <div class="ask-parents">
-      <h5>Ask parents</h5>
-      <ul>
-        <li>History of seizures?</li>
-        <li>Recent fever?</li>
-        <li>How long was the seizure?</li>
-        <li>What did the seizure look like?</li>
-      </ul>
-    </div>
-    <div class="be-sure-to">
+    <div class="drawer-section be-sure-to">
       <h5>Be sure to</h5>
       <ul>
         <li>Check blood sugar</li>

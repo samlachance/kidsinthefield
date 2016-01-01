@@ -2,6 +2,7 @@ require './colors.rb'
 require './drug_calculations.rb'
 require './conversions.rb'
 
+set :sessions, true
 get '/' do
   erb :index
 end
@@ -11,7 +12,11 @@ get '/help' do
 end
 
 post '/help' do
-  @weight_in_lbs = params[:weight].to_i
-  @weight_in_kgs = convert_to_kg(@weight_in_lbs)
-  erb :patient_page
+  if params[:weight].to_i > 0
+    @weight_in_lbs = params[:weight].to_i
+    @weight_in_kgs = convert_to_kg(@weight_in_lbs)
+    erb :patient_page
+  else
+    redirect to('/help')
+  end
 end
