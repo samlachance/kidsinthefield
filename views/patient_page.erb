@@ -1,0 +1,8 @@
+<style>body {background-color: #<%= weight_color(@weight_in_kgs)[:hex_color] %> ;}</style>
+
+<h1><%= weight_color(@weight_in_kgs)[:color].upcase %></h1>
+<p>Your patient weighs <%= @weight_in_lbs %> lbs.</p>
+<p>Your patient weighs <%= @weight_in_kgs %> kilos.</p>
+<p>Color: <%= weight_color(@weight_in_kgs)[:color] %></p>
+<p>Tylenol dose: <%= tylenol(@weight_in_kgs) %>mg</p>
+<p><%= zofran(@weight_in_kgs) %></p>
