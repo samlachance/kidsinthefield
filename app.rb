@@ -2,7 +2,6 @@ require './colors.rb'
 require './drug_calculations.rb'
 require './conversions.rb'
 
-set :sessions, true
 get '/' do
   erb :index
 end
