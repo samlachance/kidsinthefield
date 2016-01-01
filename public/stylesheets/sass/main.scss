@@ -7,6 +7,25 @@ $gray: #787878;
 $light-gray: #E0E0E0;
 $dark-gray: #484848;
 
+$primary: #E0E0E0;
+
+$pink: #E91E63;
+$red: #fb4f4f;
+$purple: #673AB7;
+$yellow: #fbc93d;
+$blue: #6cc0e5;
+$orange: #FF5722;
+$green: #4CAF50;
+
+
+
+
+
+
+
+
+
+
 // Typefaces
 $logo: 'Montserrat', sans-serif;
 $text: 'Lato', sans-serif;
@@ -22,44 +41,103 @@ $text: 'Lato', sans-serif;
   font-family: $text;
  }
 
-
-
-
+h1 {
+  font-family: $logo;
+  color: $black;
+  text-align: center;
+  margin-top: 0;
+  background-color: $white;
+  padding: 40px;
+  box-shadow: 2px 2px 1px $dark-gray;
+}
 
 section {
   background-color: $white;
   margin-bottom: 20px;
-  border-radius: 10px;
   width: clac(100% -60px);
   padding: 10px;
+  box-shadow: 2px 2px 1px $dark-gray;
   
   h3 {
     margin: 0;
   }
 
-
-  
   &#weight {
     text-align: center;
+
+    h4 {
+      font-size: 1.5em;
+      margin: 10px;
+    }
+
   }
 
   &#vitals {
 
     div.vitals-container {
       @include outer-container;
-      
+      margin-top: 30px;
+
       div {
         text-align: center;
-        @include span-columns(3);
+        @include span-columns(4);
+
+        h4 {
+          margin-top: 0;
+        }
+
+        &:first-child {
+          border-right: 1px solid black;
+        }
+
+        &:last-child {
+          border-left: 1px solid black;
+        }
+      
+        &:nth-child(even) {
+          border: none;
+        }
+        
         
         span {
-          font-size: 2em;
+          font-size: 1.2em;
         }
       }
     }
   }
+  
+  &#call { 
 
+    div.call-container {
+      @include outer-container;
+      margin-top: 10px;
 
+      a {
+        color: $black;
+        text-decoration: none;
+        text-align: center;
+        background-color: $primary;
+        padding: 30px 0;
+        @include span-columns(4);
+        border-radius: 3px;
+
+        i {
+
+          &.fa-hospital-o {
+            color: $blue;
+          }
+
+          &.fa-plus-square {
+            color: $red;
+          }
+
+          &.fa-flask {
+            color: $green;
+          }
+        }
+      }
+    }
+  }
 
   &#drugs {
 
@@ -98,7 +176,29 @@ section {
     }
   }
 
-  &#condition {
+  &#conditions {
+    
+    div.condition-title {
+      @include outer-container;
+      
+      margin: 0;
+      margin-top: 10px;
+      padding: 20px;
+
+      background-color: $primary;
+      border-radius: 3px;
+      
+      h4 {
+        @include span-columns(11);
+        margin: 0;
+      }
+
+      i.fa {
+        @include span-columns(1);
+      }
+
+    }
+
     div {
       height: auto;
     }

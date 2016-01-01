@@ -1,0 +1,6 @@
+<section id="weight">
+  <h2><%= @weight_in_kgs %> <span class="weight-unit">kg</span></h2>
+  <p>(You entered <%= @weight_in_lbs %> lbs.)</p>
+  <h4><%= weight_color(@weight_in_kgs)[:color].upcase %></h4>
+  <h4>&asymp; <%= weight_color(@weight_in_kgs)[:age].capitalize %></h4>
+</section>

@@ -1,0 +1,17 @@
+<section id="vitals">
+  <h3>Approximate vitals</h3>
+  <div class="vitals-container">
+    <div class="heart-rate">
+    <h4>Heart rate</h4>
+      <span><%= weight_color(@weight_in_kgs)[:hr] %></span>
+    </div>
+    <div class="respirations">
+    <h4>Resp. Rate</h4>
+    <span><%= weight_color(@weight_in_kgs)[:rr] %></span>
+    </div>
+    <div class="blood-pressure">
+    <h4>Systolic BP</h4>
+    <span><%= weight_color(@weight_in_kgs)[:bp] %></span>
+    </div>
+  </div>
+</section>

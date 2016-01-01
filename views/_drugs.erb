@@ -1,0 +1,55 @@
+<section id="drugs">
+  <h3>Drugs</h3>
+  <table>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Fluid Bolus:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 20 =</td>
+      <td class="drug-dose"><%= fluid_bolus(@weight_in_kgs) %> ml</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Morphine:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
+      <td class="drug-dose"><%= morphine(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Zofran:</td>
+      <td class="equation"><%= zofran(@weight_in_kgs)[:equation] %></td>
+      <td class="drug-dose"><%= zofran(@weight_in_kgs)[:dose] %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Epi (1:10,000):</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.01 =</td>
+      <td class="drug-dose"><%= epi10(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Ativan:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
+      <td class="drug-dose"><%= ativan(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+  </table>
+</section>

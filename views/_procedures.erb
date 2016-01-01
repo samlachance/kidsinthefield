@@ -1,0 +1,55 @@
+<section id="procedures">
+  <h3>Procedures</h3>
+  <table>
+    <tr>
+      <td class="drug-name">Defib (first):</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Defib (next):</td>
+      <td class="equation"><%= @weight_in_kgs %> x 20 =</td>
+      <td class="drug-dose"><%= fluid_bolus(@weight_in_kgs) %> ml</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Cardiovert:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.01 =</td>
+      <td class="drug-dose"><%= epi10(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">ET tube:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
+      <td class="drug-dose"><%= morphine(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">NG tube:</td>
+      <td class="equation"><%= zofran(@weight_in_kgs)[:equation] %></td>
+      <td class="drug-dose"><%= zofran(@weight_in_kgs)[:dose] %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Ativan:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
+      <td class="drug-dose"><%= ativan(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+  </table>
+</section>
