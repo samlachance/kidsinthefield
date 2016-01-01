@@ -1,8 +1,203 @@
 <style>body {background-color: #<%= weight_color(@weight_in_kgs)[:hex_color] %> ;}</style>
 
-<h1><%= weight_color(@weight_in_kgs)[:color].upcase %></h1>
-<p>Your patient weighs <%= @weight_in_lbs %> lbs.</p>
-<p>Your patient weighs <%= @weight_in_kgs %> kilos.</p>
-<p>Color: <%= weight_color(@weight_in_kgs)[:color] %></p>
-<p>Tylenol dose: <%= tylenol(@weight_in_kgs) %>mg</p>
-<p><%= zofran(@weight_in_kgs) %></p>
+
+
+<section id="weight">
+  <h2><%= @weight_in_kgs %> <span class="weight-unit">kg</span></h2>
+  <p>(You entered <%= @weight_in_lbs %> lbs.)</p>
+  <h4>Your patient color is: <%= weight_color(@weight_in_kgs)[:color].capitalize %></h4>
+  <h4>Approximate age: <%= weight_color(@weight_in_kgs)[:age] %></h4>
+</section>
+
+<script>
+  $(function() {
+    $("#condition").accordion({ header: "h4", collapsible: true, active: false });
+  });
+</script>
+
+<section id="vitals">
+  <h3>Approximate vitals</h3>
+  <div class="vitals-container">
+    <div class="heart-rate">
+    <h4>Heart rate</h4>
+      <span><%= weight_color(@weight_in_kgs)[:hr] %></span>
+    </div>
+    <div class="respirations">
+    <h4>Respiratory rate</h4>
+    <span><%= weight_color(@weight_in_kgs)[:rr] %></span>
+    </div>
+    <div class="blood-pressure">
+    <h4>Blood pressure</h4>
+    <span><%= weight_color(@weight_in_kgs)[:bp] %></span>
+    </div>
+  </div>
+</section>
+
+<section id="condition">
+  <h3>Conditions</h3>
+  <h4><i class="fa fa-chevron-down"></i> CPR</h4>
+  <div>
+    
+  </div>
+  <h4><i class="fa fa-chevron-down"></i> Seizure</h4>
+  <div>
+    <div class="drugs">
+      <h5>Drugs</h5>
+      <ul>
+        <li>Ativan: <%= ativan(@weight_in_kgs) %> mg</li>
+        <li>Tylenol: <%= tylenol(@weight_in_kgs) %> mg</li>
+      </ul>
+    </div>
+    <div class="watch-for">
+      <h5>Watch for</h5>
+      <ul>
+        <li>Fever</li>
+        <li>Mental status changes</li>
+        <li>Trauma</li>
+        <li>Hypoglycemia</li>
+      </ul>
+    </div>
+    <div class="ask-parents">
+      <h5>Ask parents</h5>
+      <ul>
+        <li>History of seizures?</li>
+        <li>Recent fever?</li>
+        <li>How long was the seizure?</li>
+        <li>What did the seizure look like?</li>
+      </ul>
+    </div>
+    <div class="be-sure-to">
+      <h5>Be sure to</h5>
+      <ul>
+        <li>Check blood sugar</li>
+        <li>Check temperature</li>
+        <li>IV if afebrile</li>
+        <li>12 lead EKG</li>
+      </ul>
+    </div>
+
+  </div>
+  <h4><i class="fa fa-chevron-down"></i> Fever</h4>
+  <div>
+    
+  </div>
+  <h4><i class="fa fa-chevron-down"></i> Limb injury</h4>
+  <div>
+    
+  </div>
+  <h4><i class="fa fa-chevron-down"></i> Head injury</h4>
+  <div>
+    
+  </div>
+</section>
+
+<section id="drugs">
+  <h3>Drugs</h3>
+  <table>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Fluid Bolus:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 20 =</td>
+      <td class="drug-dose"><%= fluid_bolus(@weight_in_kgs) %> ml</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Morphine:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
+      <td class="drug-dose"><%= morphine(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Zofran:</td>
+      <td class="equation"><%= zofran(@weight_in_kgs)[:equation] %></td>
+      <td class="drug-dose"><%= zofran(@weight_in_kgs)[:dose] %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Epi (1:10,000):</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.01 =</td>
+      <td class="drug-dose"><%= epi10(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Ativan:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
+      <td class="drug-dose"><%= ativan(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+  </table>
+</section>
+<section id="procedures">
+  <h3>Procedures</h3>
+  <table>
+    <tr>
+      <td class="drug-name">Defib (first):</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Defib (next):</td>
+      <td class="equation"><%= @weight_in_kgs %> x 20 =</td>
+      <td class="drug-dose"><%= fluid_bolus(@weight_in_kgs) %> ml</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Cardiovert:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.01 =</td>
+      <td class="drug-dose"><%= epi10(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">ET tube:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
+      <td class="drug-dose"><%= morphine(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">NG tube:</td>
+      <td class="equation"><%= zofran(@weight_in_kgs)[:equation] %></td>
+      <td class="drug-dose"><%= zofran(@weight_in_kgs)[:dose] %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Ativan:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
+      <td class="drug-dose"><%= ativan(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+    <tr>
+      <td class="drug-name">Tylenol:</td>
+      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
+      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+    </tr>
+  </table>
+</section>

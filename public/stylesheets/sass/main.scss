@@ -1,7 +1,122 @@
-body {
-  background-color: #FFF;
+// Testing for patient_page view
 
-  a {
-    color: red;
+// Colors
+$black: #202020;
+$white: #F8F8F8;
+$gray: #787878;
+$light-gray: #E0E0E0;
+$dark-gray: #484848;
+
+// Typefaces
+$logo: 'Montserrat', sans-serif;
+$text: 'Lato', sans-serif;
+
+
+@import "bourbon";
+@import "neat";
+
+ body {
+  color: $black;
+  padding: 20px;
+  margin: 0;
+  font-family: $text;
+ }
+
+
+
+
+
+section {
+  background-color: $white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: clac(100% -60px);
+  padding: 10px;
+  
+  h3 {
+    margin: 0;
+  }
+
+
+  
+  &#weight {
+    text-align: center;
+  }
+
+  &#vitals {
+
+    div.vitals-container {
+      @include outer-container;
+      
+      div {
+        text-align: center;
+        @include span-columns(3);
+        
+        span {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+
+
+
+  &#drugs {
+
+    table {
+      width: 100%;
+
+      td {
+        padding: 5px;
+      }
+      
+      td.drug-name {
+
+      }
+
+      td.equation {
+        text-align: right;
+        font-size: 0.9em;
+      }
+
+      td.drug-dose {
+        text-align: right;
+      }
+
+      tr:nth-child(even) {
+        background-color: $light-gray;
+
+        td.equation {
+          color: $white;
+        }
+      }
+      tr:nth-child(odd) {
+        td.equation {
+          color: $light-gray;
+        }
+      }
+    }
+  }
+
+  &#condition {
+    div {
+      height: auto;
+    }
+  }
+
+
+  p {
+    margin: 0;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 4em;
+    font-family: $logo;
+
+
+    span.weight-unit {
+      font-size: 0.4em;
+    }
   }
 }
