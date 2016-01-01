@@ -203,13 +203,8 @@ section {
       i.fa {
         @include span-columns(1);
       }
-
     }
-
-    div.drawer {
-      height: auto;
-    }
-
+    
     div.drawer-section {
       padding: 0 0 0 15px;
     }
