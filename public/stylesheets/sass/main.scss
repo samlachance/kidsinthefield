@@ -1,4 +1,5 @@
-// Testing for patient_page view
+@import "bourbon";
+@import "neat";
 
 // Colors
 $black: #202020;
@@ -17,22 +18,9 @@ $blue: #6cc0e5;
 $orange: #FF5722;
 $green: #4CAF50;
 
-
-
-
-
-
-
-
-
-
 // Typefaces NunitoMontserrat
 $logo: 'Nunito', sans-serif;
 $text: 'Lato', sans-serif;
-
-
-@import "bourbon";
-@import "neat";
 
  body {
   color: $black;
@@ -64,7 +52,21 @@ section {
   padding: 10px;
   box-shadow: 2px 2px 1px $dark-gray;
   
+  h2 {
+    margin: 0;
+    font-size: 4em;
+    font-family: $logo;
+
+    span.weight-unit {
+      font-size: 0.4em;
+    }
+  }
+
   h3 {
+    margin: 0;
+  }
+
+  p {
     margin: 0;
   }
 
@@ -104,7 +106,6 @@ section {
         &:nth-child(even) {
           border: none;
         }
-        
         
         span {
           font-size: 1.2em;
@@ -146,17 +147,13 @@ section {
     }
   }
 
-  &#drugs {
+  &#drugs, &#procedures {
 
     table {
       width: 100%;
 
       td {
         padding: 5px;
-      }
-      
-      td.drug-name {
-
       }
 
       td.equation {
@@ -175,7 +172,9 @@ section {
           color: $white;
         }
       }
+
       tr:nth-child(odd) {
+
         td.equation {
           color: $light-gray;
         }
@@ -207,22 +206,6 @@ section {
     
     div.drawer-section {
       padding: 0 0 0 15px;
-    }
-  }
-
-
-  p {
-    margin: 0;
-  }
-  
-  h2 {
-    margin: 0;
-    font-size: 4em;
-    font-family: $logo;
-
-
-    span.weight-unit {
-      font-size: 0.4em;
     }
   }
 }
@@ -262,7 +245,6 @@ form {
       height: 40px;
       border-radius: 3px;
       border: $green solid 3px;
-
     }
 
     &[type="tel"] {
@@ -277,7 +259,6 @@ form {
         outline: none;
         border-color: $green;
       }
-
     } 
   }
 }

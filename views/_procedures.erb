@@ -3,53 +3,23 @@
   <table>
     <tr>
       <td class="drug-name">Defib (first):</td>
-      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
-      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+      <td class="equation"><%= @weight_in_kgs %> x 2 =</td>
+      <td class="drug-dose"><%= defib_first(@weight_in_kgs) %> J</td>
     </tr>
     <tr>
       <td class="drug-name">Defib (next):</td>
-      <td class="equation"><%= @weight_in_kgs %> x 20 =</td>
-      <td class="drug-dose"><%= fluid_bolus(@weight_in_kgs) %> ml</td>
+      <td class="equation"><%= @weight_in_kgs %> x 4 =</td>
+      <td class="drug-dose"><%= defib_second(@weight_in_kgs) %> J</td>
     </tr>
     <tr>
-      <td class="drug-name">Cardiovert:</td>
-      <td class="equation"><%= @weight_in_kgs %> x 0.01 =</td>
-      <td class="drug-dose"><%= epi10(@weight_in_kgs) %> mg</td>
+      <td class="drug-name">Cardiovert (first):</td>
+      <td class="equation"><%= @weight_in_kgs %> x 0.5 =</td>
+      <td class="drug-dose"><%= cardiovert_first(@weight_in_kgs) %> J</td>
     </tr>
     <tr>
-      <td class="drug-name">ET tube:</td>
-      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
-      <td class="drug-dose"><%= morphine(@weight_in_kgs) %> mg</td>
-    </tr>
-    <tr>
-      <td class="drug-name">NG tube:</td>
-      <td class="equation"><%= zofran(@weight_in_kgs)[:equation] %></td>
-      <td class="drug-dose"><%= zofran(@weight_in_kgs)[:dose] %> mg</td>
-    </tr>
-    <tr>
-      <td class="drug-name">Ativan:</td>
-      <td class="equation"><%= @weight_in_kgs %> x 0.1 =</td>
-      <td class="drug-dose"><%= ativan(@weight_in_kgs) %> mg</td>
-    </tr>
-    <tr>
-      <td class="drug-name">Tylenol:</td>
-      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
-      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
-    </tr>
-    <tr>
-      <td class="drug-name">Tylenol:</td>
-      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
-      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
-    </tr>
-    <tr>
-      <td class="drug-name">Tylenol:</td>
-      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
-      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
-    </tr>
-    <tr>
-      <td class="drug-name">Tylenol:</td>
-      <td class="equation"><%= @weight_in_kgs %> x 15 =</td>
-      <td class="drug-dose"><%= tylenol(@weight_in_kgs) %> mg</td>
+      <td class="drug-name">Cardiovert (next):</td>
+      <td class="equation"><%= @weight_in_kgs %> x 2 =</td>
+      <td class="drug-dose"><%= cardiovert_second(@weight_in_kgs) %> J</td>
     </tr>
   </table>
 </section>
