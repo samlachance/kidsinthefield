@@ -10,6 +10,18 @@ get '/help' do
   erb :help
 end
 
+get '/about' do
+  erb :about
+end
+
+get '/contact' do
+  erb :contact
+end
+
+get '/contribute' do
+  erb :contribute
+end
+
 post '/help' do
   if params[:weight].to_i > 0
     @weight_in_lbs = params[:weight].to_i
