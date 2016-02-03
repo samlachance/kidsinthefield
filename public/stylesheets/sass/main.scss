@@ -211,6 +211,95 @@ section {
 }
 
 
+// Home page
+
+section.home {
+
+  text-align: center;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-top: 10px;
+  }
+
+  ul {
+    margin: 10px 0 0 0;
+  }
+}
+
+section#mission {
+  text-align: center;
+
+  div.feature-container {
+  @include outer-container;
+
+    div.feature {
+      @include span-columns(4);
+      background-color: red;
+      background-color: $primary;
+      padding: 30px 0;
+      border-radius: 3px;
+
+      i {
+        &.fa-heartbeat {
+          color: $red;
+        }
+
+        &.fa-book {
+          color: $blue;
+        }
+
+        &.fa-user-md {
+          color: $purple;
+        }
+      }
+    }
+  }
+}
+
+div.call-to-action {
+  background-color: $primary;
+  padding: 15px 0;
+  border-radius: 3px;
+  text-align: center;
+}
+
+div#help-button-container {
+  height: 100px;
+  background-color: $green;
+
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+
+
+  font-size: 3em;
+  font-family: $logo;
+
+  a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    color: $white;
+  }
+}
+
+
+
+section#call-to-action {
+  margin-bottom: 100px;
+}
+
+section#intro {
+  text-align: center;
+}
 
 
 
